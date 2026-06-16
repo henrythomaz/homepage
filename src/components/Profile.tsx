@@ -24,7 +24,7 @@ const Profile = () => {
           <p className="text-sm">FullStack Developer & Data Scientist</p>
         </div>
 
-        <img src="/avatar.jpg" alt="Henry" className="lg:w-96 rounded-2xl object-cover" />
+        <img src="/homepage/avatar.jpg" alt="Henry" className="lg:w-96 rounded-2xl object-cover" />
 
         <div className="mt-6">
           <p className="text-sm text-neutral-300">Specialization:</p>

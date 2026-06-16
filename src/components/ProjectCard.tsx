@@ -30,7 +30,7 @@ const ProjectCard = ({
   return (
     <motion.div variants={fadeUp} className="relative">
       <figure className="overflow-hidden rounded-md">
-        <img src={imgSrc} alt="title" className="rounded-md transition durantion-500 hover:scale-115 w-full" />
+        <img src={'/homepage'+ imgSrc} alt="title" className="rounded-md transition durantion-500 hover:scale-115 w-full" />
       </figure>
 
       <div className="absolute bottom-0 p-2 flex gap-2">
