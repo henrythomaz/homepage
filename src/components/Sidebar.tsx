@@ -40,7 +40,7 @@ const Sidebar = () => {
     <>
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="ghost" size="icon" className="m-4 fixed top-4 right-4 z-50 border-2 hover:border-primary bg-neutral-800 py-5 px-5 rounded-full hover:text-primary cursor-pointer">
+          <Button variant="ghost" size="icon" className="m-4 fixed top-4 right-7 z-50 border-2 hover:border-primary bg-neutral-800 py-5 px-5 rounded-full hover:text-primary cursor-pointer">
             <MenuIcon size={30} />
           </Button>
         </SheetTrigger>

@@ -89,15 +89,15 @@ const socialLinks: LinksType[] = [
 const projectsData: ProjectType[] = [
   {
     imgSrc: '/images/project-ph-1.jpeg',
-    title: 'Full stack music app',
-    tags: ['API', 'Development'],
-    projectLink: 'https://musify-5al0.onrender.com/',
+    title: 'Intelligent system for detecting potential dengue fever with Computer Vision as Deep Learning',
+    tags: ['API', 'Deep Learning', 'Computer Vision'],
+    projectLink: 'https://henrythomaz.github.io/horus/',
   },
   {
     imgSrc: '/images/project-ph-2.jpeg',
-    title: 'Full stack music app',
-    tags: ['API', 'Development'],
-    projectLink: 'https://musify-5al0.onrender.com/',
+    title: 'raycaster inspired in doom',
+    tags: ['C', 'Games'],
+    projectLink: 'https://github.com/henrythomaz/doom/',
   },
   {
     imgSrc: '/images/project-ph-3.jpeg',

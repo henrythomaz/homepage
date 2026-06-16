@@ -28,9 +28,23 @@ const ProjectCard = ({
   // title
 }: ProjectType ) => {
   return (
-    <motion.div variants={fadeUp} className="relative">
+    <motion.div variants={fadeUp} initial="hidden"
+whileInView="visible" className="relative">
       <figure className="overflow-hidden rounded-md">
-        <img src={'/homepage'+ imgSrc} alt="title" className="rounded-md transition durantion-500 hover:scale-115 w-full" />
+        <img src={imgSrc} alt="title" onError={(e) => {
+          const fallbacks = [
+            "/homepage/images/project-ph-1.jpeg",
+            "/homepage/images/project-ph-2.jpeg",
+            "/homepage/images/project-ph-3.jpeg",
+            "/homepage/images/project-ph-4.jpeg",
+          ];
+
+    const random =
+      fallbacks[Math.floor(Math.random() * fallbacks.length)];
+
+    e.currentTarget.src = random;
+  }}
+/>
       </figure>
 
       <div className="absolute bottom-0 p-2 flex gap-2">
