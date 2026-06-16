@@ -37,7 +37,7 @@ import {
 import {
   FaLinkedin,
   FaInstagram,
-  FaTwitter,
+  FaGithub,
   FaYoutube
 } from "react-icons/fa";
 
@@ -75,9 +75,9 @@ const socialLinks: LinksType[] = [
     link: 'https://instagram.com/henrythcampos',
   },
   {
-    icon: FaTwitter,
-    label: 'Twitter',
-    link: '/#',
+    icon: FaGithub,
+    label: 'Github',
+    link: 'https://github.com/henrythomaz',
   },
   {
     icon: FaYoutube,
