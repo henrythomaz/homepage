@@ -23,9 +23,9 @@ import type { ProjectType } from "@/types";
 
 const ProjectCard = ({
   imgSrc,
-  projectLink,
+  // projectLink,
   tags,
-  title
+  // title
 }: ProjectType ) => {
   return (
     <motion.div variants={fadeUp} className="relative">
@@ -34,7 +34,7 @@ const ProjectCard = ({
       </figure>
 
       <div className="absolute bottom-0 p-2 flex gap-2">
-        {tags.map((tag, i) => (
+        {tags.map((tag:any, i:any) => (
           <span key={i} className="bg-background hover:bg-primary hover:text-black py-1 px-2 rounded-sm text-sm cursor-pointer">{tag}</span>
         ))}
       </div>

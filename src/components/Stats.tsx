@@ -21,7 +21,7 @@ import { fadeUp, staggerContainer } from "@/lib/animations"
 
 import { statsData }  from "@/constants";
 
-import { SparkleIcon } from "lucide-react";
+// import { SparkleIcon } from "lucide-react";
 
 const Stats = () => {
   return (

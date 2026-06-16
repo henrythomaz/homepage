@@ -7,20 +7,20 @@
  * Node Modules
  */
 
-import { motion } from "motion/react";
+// import { motion } from "motion/react";
 
 /*
  * Custom Modules
  */
 
-import { fadeUp, staggerContainer } from "@/lib/animations";
+// import { fadeUp, staggerContainer } from "@/lib/animations";
 
 /*
  * Components
  */
 
-import SectionHeader from "@/components/SectionHeader";
-import { Button } from "@/components/ui/button";
+// import SectionHeader from "@/components/SectionHeader";
+// import { Button } from "@/components/ui/button";
 
 const About = () => {
   return (

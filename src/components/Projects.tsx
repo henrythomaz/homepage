@@ -29,7 +29,7 @@ import ProjectCard from "@/components/ProjectCard";
 
 import { projectsData }  from "@/constants";
 
-import { SparkleIcon } from "lucide-react";
+// import { SparkleIcon } from "lucide-react";
 
 const Projects = () => {
   return (
