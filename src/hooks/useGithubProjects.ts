@@ -1,41 +1,48 @@
 import { useEffect, useState } from "react";
 import type { ProjectType } from "@/types";
 
+type GithubProjectResponse = {
+  name: string;
+  language: string | null;
+  homepage: string | null;
+  html_url: string;
+  fork: boolean;
+};
+
 export function useGithubProjects() {
   const [projects, setProjects] = useState<ProjectType[]>([]);
 
   useEffect(() => {
+    const controller = new AbortController();
+
     async function load() {
-      const response = await fetch(
-        "https://api.github.com/users/henrythomaz/repos"
-      );
+      try {
+        const response = await fetch("https://api.github.com/users/henrythomaz/repos?per_page=100", {
+          signal: controller.signal,
+        });
 
-      const repos = await response.json();
+        if (!response.ok) throw new Error("Unable to load GitHub projects");
 
-      
-      console.log("repos:", repos);
+        const repos: GithubProjectResponse[] = await response.json();
+        const data = repos
+          .filter((repo) => !repo.fork)
+          .map((repo) => ({
+            title: repo.name,
+            tags: [repo.language ?? "Project"],
+            projectLink: repo.homepage?.trim() || repo.html_url,
+            imgSrc: `https://raw.githubusercontent.com/henrythomaz/${repo.name}/main/images/cover.png`,
+          }));
 
-
-
-      const data: ProjectType[] = repos.map((repo: any) => ({
-        title: repo.name,
-
-        tags: [repo.language ?? "Unknown"],
-
-        projectLink:
-          repo.homepage?.length > 0
-            ? repo.homepage
-            : repo.html_url,
-
-        imgSrc: `https://raw.githubusercontent.com/henrythomaz/${repo.name}/main/images/cover.png`,
-      }));
-
-      console.log("data:", data);
-
-      setProjects(data);
+        setProjects(data);
+      } catch (error) {
+        if (error instanceof Error && error.name !== "AbortError") {
+          console.error(error);
+        }
+      }
     }
 
-    load();
+    void load();
+    return () => controller.abort();
   }, []);
 
   return projects;

@@ -3,30 +3,26 @@
  * @license Apache-2.0
  */
 
-/*
- * Node Modules
- */
-
-// import { useEffect } from "react";
-
-/*
- * Components
- */
-
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
+import Services from "@/components/Services";
+import Resume from "@/components/Resume";
+import Testimonials from "@/components/Testimonials";
+import Contact from "@/components/Contact";
 
-const App = () => {
-  return (
-    <main className="flex flex-col container mx-auto p-10 max-w-4xl lg:pr-10 lg:pl-0 lg:max-w-6xl">
-      <Hero />
-      <Stats />
-      <Projects />
-      <About />
-    </main>
-  );
-};
+const App = () => (
+  <main className="mx-auto flex w-full max-w-6xl flex-col px-6 pb-10 pt-10 sm:px-10 lg:max-w-4xl lg:pr-10 lg:pl-0">
+    <Hero />
+    <Stats />
+    <Projects />
+    <About />
+    <Services />
+    <Resume />
+    <Testimonials />
+    <Contact />
+  </main>
+);
 
 export default App;

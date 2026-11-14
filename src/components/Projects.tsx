@@ -40,10 +40,9 @@ import { useGithub } from "@/hooks/useGithub";
 
 
 const Projects = () => {
-  const { repos, loading } = useGithub();
+  const { loading } = useGithub();
   const projects = useGithubProjects();
 
-  console.log("projects recebidos:", projects);
 
   const repositoriosIgnorados = ["henrythomaz", "homepage"];
 
@@ -57,7 +56,8 @@ const Projects = () => {
 
       {loading && (
         <motion.p className="mt-8 text-neutral-400">Loading projects...</motion.p>
-      )}<motion.div className="grid md:grid-cols-2 gap-10 mt-10" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={staggerContainer(0.5)}>
+      )}
+      <motion.div className="grid md:grid-cols-2 gap-10 mt-10" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={staggerContainer(0.5)}>
         {projectsFilter.map((project, i) => (
           <ProjectCard key={i} imgSrc={project.imgSrc} projectLink={project.projectLink} tags={project.tags} title={project.title}/>
         ))}
