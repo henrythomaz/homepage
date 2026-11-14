@@ -20,15 +20,15 @@ export function getStats(repos: GithubRepo[]): StatsItem[] {
   return [
     {
       number: `${currentYear - 2021}+`,
-      label: "Years Of Experience",
+      label: "Years of Coding Journey",
     },
     {
-      number: `${repos.length}`,
+      number: `${repos.length - 2}`,
       label: "Projects",
     },
     {
       number: `${technologies.size}`,
-      label: "Languages",
+      label: "Languages of programing",
     },
   ];
 }

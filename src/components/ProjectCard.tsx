@@ -23,7 +23,7 @@ import type { ProjectType } from "@/types";
 
 const ProjectCard = ({
   imgSrc,
-  // projectLink,
+  projectLink,
   tags,
   // title
 }: ProjectType ) => {
@@ -31,6 +31,7 @@ const ProjectCard = ({
     <motion.div variants={fadeUp} initial="hidden"
 whileInView="visible" className="relative">
       <figure className="overflow-hidden rounded-md">
+        <a href={projectLink} target="_blank" rel="noopener noreferrer">
         <img src={imgSrc} alt="title" onError={(e) => {
           const fallbacks = [
             "/homepage/images/project-ph-1.jpeg",
@@ -45,6 +46,7 @@ whileInView="visible" className="relative">
     e.currentTarget.src = random;
   }}
 />
+</a>
       </figure>
 
       <div className="absolute bottom-0 p-2 flex gap-2">
